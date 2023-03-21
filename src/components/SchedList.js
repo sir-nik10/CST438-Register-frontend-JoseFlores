@@ -35,7 +35,7 @@ class SchedList extends Component {
     console.log("SchedList.fetchCourses");
     const token = Cookies.get('XSRF-TOKEN');
     
-    fetch(`${SERVER_URL}/schedule?year=${this.props.location.year}&semester=${this.props.location.semester}`, 
+    fetch(`${SERVER_URL}schedule?year=${this.props.location.year}&semester=${this.props.location.semester}`, 
       {  
         method: 'GET', 
         headers: { 'X-XSRF-TOKEN': token }
@@ -98,7 +98,7 @@ class SchedList extends Component {
   addCourse = (course) => {
     const token = Cookies.get('XSRF-TOKEN');
  
-    fetch(`${SERVER_URL}/schedule`,
+    fetch(`${SERVER_URL}schedule`,
       { 
         method: 'POST', 
         headers: { 'Content-Type': 'application/json',
